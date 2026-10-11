@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WebMind AI — Autonomous Photo-First Web Presence Engine</title>
+  <meta name="description" content="Generate fully functional, simple web presences with responsive frontend and backend design, high-quality photos, zero pricing, and intuitive visual UX accessible to all.">
+  
+  <!-- Modern Typography from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/generated-site.css">
+</head>
+<body>
+
+  <!-- Ambient Animated Cosmic Background -->
+  <div class="ambient-background">
+    <div class="ambient-grid"></div>
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+    <div class="ambient-orb orb-4"></div>
+  </div>
+
+  <div class="app-container">
+
+    <!-- ====================================================================
+         NAVIGATION BAR
+         ==================================================================== -->
+    <header class="navbar glass-panel">
+      <a href="#" class="nav-brand" onclick="App.returnToLanding(); return false;">
+        <div class="brand-icon-wrapper">✦</div>
+        <span class="brand-text">WebMind AI</span>
+        <span class="nav-badge">PHOTO ENGINE</span>
+      </a>
+
+      <nav class="nav-center">
+        <a href="#showcase" class="nav-link" onclick="App.returnToLanding()">Photo Showcase</a>
+        <a href="#features-overview" class="nav-link" onclick="App.returnToLanding()">Capabilities</a>
+        <button class="nav-link special" onclick="App.openModal('modal-pitch')">🏆 Pitch & Rubric</button>
+        <button class="nav-link" onclick="App.openModal('modal-contact')">Contact</button>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-ghost" onclick="App.openModal('modal-login')">Login</button>
+        <button class="btn btn-primary" onclick="App.openModal('modal-register')">Register</button>
+      </div>
+    </header>
+
+    <!-- ====================================================================
+         LANDING VIEW (HERO & PROMPT INTERACTION)
+         ==================================================================== -->
+    <main id="landing-view">
+      <section class="hero-section">
+        <!-- Floating Engine Badge -->
+        <div class="hero-pill-badge">
+          <span class="sparkle">☕</span>
+          <span>Photo-First Web Engine • Zero Pricing • Accessible Visual UX</span>
+        </div>
+
+        <!-- Prominently displayed large heading WebMind AI -->
+        <h1 class="hero-title">
+          <span class="hero-title-highlight">WebMind AI</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Describe the website you want in plain words. Our agent autonomously crafts an attractive, photo-first web presence with zero pricing sections, intuitive audio narration, and seamless full-stack responsiveness.
+        </p>
+
+        <!-- Glassmorphism Prompt Input Box -->
+        <div class="prompt-box-card glass-panel-elevated">
+          <div class="prompt-input-wrapper">
+            <textarea 
+              id="main-prompt-input" 
+              class="prompt-textarea" 
+              placeholder="Describe your dream website (e.g., A warm artisan coffee shop named Velvet Roast Cafe with high-quality photos, fresh pastries, warm rustic atmosphere, and zero pricing)..."
+              rows="3"
+            >A warm, cozy artisan coffee shop named Velvet Roast Cafe with high-quality photos, fresh pastries, warm rustic atmosphere, and zero pricing.</textarea>
+          </div>
+
+          <div class="prompt-controls-bar">
+            <div class="prompt-options">
+              <button id="btn-surprise-me" class="btn btn-glass btn-sm" title="Get inspiration from a curated prompt">
+                🎲 Surprise Me
+              </button>
+            </div>
+
+            <div class="prompt-actions">
+              <button id="btn-generate-main" class="btn btn-gradient btn-lg">
+                <span>Generate Website</span>
+                <span>✨</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Suggestion Preset Pills -->
+          <div class="prompt-presets">
+            <span class="preset-label">Generate any shop:</span>
+            <button class="preset-chip" data-prompt="A warm, cozy artisan coffee shop named Velvet Roast Cafe with high-quality photos, fresh pastries, warm rustic atmosphere, and zero pricing.">
+              ☕ Coffee & Cafe
+            </button>
+            <button class="preset-chip" data-prompt="A French artisan bakery named Golden Crust with hot sourdough, golden croissants, fresh fruit pastries, and zero cost sections.">
+              🥖 Artisan Bakery
+            </button>
+            <button class="preset-chip" data-prompt="An independent cozy bookstore & comic reading lounge named Page & Quill with floor-to-ceiling shelves, vintage hardcovers, and quiet armchairs.">
+              📚 Bookstore Lounge
+            </button>
+            <button class="preset-chip" data-prompt="A handcrafted ceramics & pottery studio named Mud & Fire with wheel-thrown stoneware vases, barista mugs, and gas kiln firings.">
+              🏺 Pottery Studio
+            </button>
+            <button class="preset-chip" data-prompt="A gentle organic pet grooming salon & dog bakery named Paws & Whiskers with warm herbal baths, healthy biscuits, and zero pricing.">
+              🐾 Pet Boutique
+            </button>
+            <button class="preset-chip" data-prompt="An artisan small-batch gelato parlor named Sweet Swirl with roasted Sicilian pistachio, mango sorbet, and fresh warm waffle cones.">
+              🍦 Gelato Parlor
+            </button>
+            <button class="preset-chip" data-prompt="A woodfired Neapolitan pizzeria named Crust & Ember with San Marzano tomatoes, buffalo mozzarella, and blistered sourdough crust.">
+              🍕 Woodfired Pizzeria
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Capabilities Strip -->
+      <section class="features-strip" id="features-overview">
+        <div class="strip-item glass-panel">
+          <div class="strip-icon">📸</div>
+          <div class="strip-text">
+            <h4>Universal High-Res Photos</h4>
+            <p>Automatically populates authentic photography specific to ANY shop theme (cafes, bookstores, pottery, pets, gelato, etc.).</p>
+          </div>
+        </div>
+
+        <div class="strip-item glass-panel">
+          <div class="strip-icon">✏️</div>
+          <div class="strip-text">
+            <h4>Deeply Editable Sections</h4>
+            <p>Click any text or photo in the live preview to edit in real time, or use the visual Section Editor drawer.</p>
+          </div>
+        </div>
+
+        <div class="strip-item glass-panel">
+          <div class="strip-icon">🔊</div>
+          <div class="strip-text">
+            <h4>Speech Narration for All</h4>
+            <p>Audio speaker buttons on every card allow guests with no reading skills to hear all details read aloud in natural speech.</p>
+          </div>
+        </div>
+
+        <div class="strip-item glass-panel">
+          <div class="strip-icon">🚫</div>
+          <div class="strip-text">
+            <h4>Zero Pricing / Cost Details</h4>
+            <p>Completely free of any prices, dollar signs, fees, or subscription matrices. Pure sensory and community focus.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Showcase Presets Section -->
+      <section class="showcase-section" id="showcase">
+        <span class="section-tag">ANY SHOP THEME</span>
+        <h2 class="section-heading">Explore Diverse Curated Experiences</h2>
+        <p class="section-sub">Click below to experience full-screen photography, audio speech, and functional interactions for any theme.</p>
+
+        <div class="showcase-cards">
+          <div class="showcase-card glass-panel" onclick="App.generateWebsite('A warm, cozy artisan coffee shop named Velvet Roast Cafe with high-quality photos, fresh pastries, warm rustic atmosphere, and zero pricing.')">
+            <div class="showcase-card-header">
+              <span class="card-category-badge">Coffee & Cafe</span>
+              <span style="color:#fde047; font-size:0.8rem;">Artisan Amber</span>
+            </div>
+            <div class="showcase-preview-thumb">
+              <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=400&q=80" style="width:100%; height:100%; object-fit:cover;" alt="Coffee">
+            </div>
+            <h3>Velvet Roast Cafe</h3>
+            <p>Latte art photography, golden flaky croissants, cozy rustic seating, and live backend like counter.</p>
+            <div class="showcase-card-footer">
+              <span class="card-cta-link">View Web Platform →</span>
+            </div>
+          </div>
+
+          <div class="showcase-card glass-panel" onclick="App.generateWebsite('A handcrafted ceramics & pottery studio named Mud & Fire with wheel-thrown stoneware vases, barista mugs, and gas kiln firings.')">
+            <div class="showcase-card-header">
+              <span class="card-category-badge">Ceramics Studio</span>
+              <span style="color:#ea580c; font-size:0.8rem;">Terracotta Craft</span>
+            </div>
+            <div class="showcase-preview-thumb">
+              <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=400&q=80" style="width:100%; height:100%; object-fit:cover;" alt="Pottery">
+            </div>
+            <h3>Mud & Fire Pottery</h3>
+            <p>Wheel-thrown stoneware vases, barista mugs, volcanic glazes, and gas kiln firings.</p>
+            <div class="showcase-card-footer">
+              <span class="card-cta-link">View Web Platform →</span>
+            </div>
+          </div>
+
+          <div class="showcase-card glass-panel" onclick="App.generateWebsite('An independent cozy bookstore & comic reading lounge named Page & Quill with floor-to-ceiling shelves, vintage hardcovers, and quiet armchairs.')">
+            <div class="showcase-card-header">
+              <span class="card-category-badge">Bookstore Lounge</span>
+              <span style="color:#c084fc; font-size:0.8rem;">Royal Purple</span>
+            </div>
+            <div class="showcase-preview-thumb">
+              <img src="https://images.unsplash.com/photo-1507842229451-7f01be7a7a58?auto=format&fit=crop&w=400&q=80" style="width:100%; height:100%; object-fit:cover;" alt="Books">
+            </div>
+            <h3>Page & Quill Books</h3>
+            <p>Floor-to-ceiling wooden bookshelves, vintage hardcovers, quiet velvet armchairs, and loose-leaf tea.</p>
+            <div class="showcase-card-footer">
+              <span class="card-cta-link">View Web Platform →</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+         STUDIO VIEW (FULL-SCREEN AI STUDIO WORKSPACE)
+         ==================================================================== -->
+    <div id="studio-view">
+      <!-- Studio Header / Command Toolbar (Clean & Uncluttered) -->
+      <div class="studio-header">
+        <div class="studio-left-controls">
+          <button class="btn btn-glass btn-sm" onclick="App.returnToLanding()">
+            <span>← Prompts</span>
+          </button>
+
+          <div class="project-title-editor">
+            <input type="text" id="project-name-input" class="project-name-input" value="Velvet Roast Cafe" title="Click to rename brand">
+          </div>
+
+          <div style="display:flex; gap:4px;">
+            <button class="btn btn-ghost btn-icon" onclick="App.undo()" title="Undo edit">↩</button>
+            <button class="btn btn-ghost btn-icon" onclick="App.redo()" title="Redo edit">↪</button>
+          </div>
+        </div>
+
+        <!-- Viewport Switcher (Desktop, Tablet, Mobile) -->
+        <div class="studio-view-toggles">
+          <button id="btn-view-desktop" class="view-btn active" onclick="App.switchViewMode('desktop')">
+            <span>🖥️</span> Desktop
+          </button>
+          <button id="btn-view-tablet" class="view-btn" onclick="App.switchViewMode('tablet')">
+            <span>📱</span> Tablet
+          </button>
+          <button id="btn-view-mobile" class="view-btn" onclick="App.switchViewMode('mobile')">
+            <span>📲</span> Mobile
+          </button>
+        </div>
+
+        <!-- Clean Action Buttons (100% Functional, Stripped of Clutter) -->
+        <div class="studio-actions-right">
+          <button class="btn btn-glass btn-sm" onclick="App.openExportModal()">
+            <span>💾 Export Code</span>
+          </button>
+          <button class="btn btn-glass btn-sm" onclick="App.openShareModal()">
+            <span>🔗 Share Link</span>
+          </button>
+          <button class="btn btn-primary btn-sm" onclick="App.openModal('modal-pitch')">
+            <span>🏆 Pitch & Rubric</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Studio Workspace: Split Sidebar + Device Canvas -->
+      <div class="studio-workspace">
+        
+        <!-- Left Sidebar: AI Copilot & Outline -->
+        <aside class="studio-sidebar">
+          <div class="sidebar-tabs">
+            <button id="tab-btn-chat" class="sidebar-tab-btn active" onclick="App.switchSidebarTab('chat')">
+              <span>🤖</span> Copilot
+            </button>
+            <button id="tab-btn-sections" class="sidebar-tab-btn" onclick="App.switchSidebarTab('sections')">
+              <span>📑</span> Sections
+            </button>
+            <button id="tab-btn-themes" class="sidebar-tab-btn" onclick="App.switchSidebarTab('themes')">
+              <span>🎨</span> Themes
+            </button>
+          </div>
+
+          <!-- Tab 1: AI Chat Copilot -->
+          <div id="tab-content-chat" class="sidebar-tab-content active">
+            <div class="chat-container">
+              <div id="chat-messages-area" class="chat-messages-area">
+                <!-- Dynamically populated -->
+              </div>
+              <div class="chat-input-wrapper">
+                <input type="text" id="chat-input-field" class="chat-input" placeholder="Ask WebMind to adjust copy, theme, or photos...">
+                <button id="chat-send-btn" class="btn btn-primary btn-sm" style="padding:6px 12px;">Send</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Sections Outline Manager -->
+          <div id="tab-content-sections" class="sidebar-tab-content">
+            <div class="sections-manager">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
+                <span class="theme-group-title" style="margin-bottom:0;">Active Sections</span>
+              </div>
+              <div id="sidebar-sections-list" class="sections-list">
+                <!-- Dynamically populated -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Themes & Color Palette -->
+          <div id="tab-content-themes" class="sidebar-tab-content">
+            <div class="theme-studio">
+              <div>
+                <div class="theme-group-title">Curated Color Harmonies</div>
+                <div id="sidebar-palettes-grid" class="swatch-grid">
+                  <!-- Dynamically populated -->
+                </div>
+              </div>
+              <div>
+                <div class="theme-group-title">Accessibility & Non-Readers</div>
+                <p style="font-size:0.82rem; color:#94a3b8; line-height:1.5;">
+                  Every section and card features an audio 🔊 narration button using the Web Speech API. Users who cannot read can hear descriptions spoken aloud in natural speech.
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right Preview Canvas: Simulated Device Frame -->
+        <main class="studio-canvas-container">
+          <div id="device-frame-wrapper" class="device-frame-wrapper view-desktop">
+            <div class="browser-bar">
+              <div class="browser-dots">
+                <div class="b-dot b-dot-red"></div>
+                <div class="b-dot b-dot-yellow"></div>
+                <div class="b-dot b-dot-green"></div>
+              </div>
+              <div class="browser-url-bar">
+                <span style="color:#10b981;">🔒</span>
+                <span id="browser-url-text" class="browser-url-text">https://webmind.ai/preview/velvet-roast</span>
+              </div>
+              <div class="browser-badge-status">
+                <div class="status-indicator-dot"></div>
+                <span>LIVE PREVIEW</span>
+              </div>
+            </div>
+
+            <div id="canvas-viewport" class="canvas-viewport">
+              <!-- Dynamically populated with generated website -->
+            </div>
+          </div>
+        </main>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ====================================================================
+       AI SYNTHESIS STEP-BY-STEP LOADING OVERLAY
+       ==================================================================== -->
+  <div id="ai-loading-overlay" class="ai-loading-overlay">
+    <div class="ai-loading-card glass-panel-elevated">
+      <div class="ai-spinner-halo">
+        <div class="ai-spinner-inner">✨</div>
+      </div>
+      <h3 class="ai-loading-title">Synthesizing Photo-First Web Presence</h3>
+      
+      <div class="ai-loading-steps">
+        <div id="step-1" class="step-indicator-row">
+          <div class="step-dot"></div>
+          <span>Curating high-resolution photography...</span>
+        </div>
+        <div id="step-2" class="step-indicator-row">
+          <div class="step-dot"></div>
+          <span>Configuring visual iconography & zero-pricing layout...</span>
+        </div>
+        <div id="step-3" class="step-indicator-row">
+          <div class="step-dot"></div>
+          <span>Enabling audio speech narration for non-readers...</span>
+        </div>
+        <div id="step-4" class="step-indicator-row">
+          <div class="step-dot"></div>
+          <span>Connecting live REST backend endpoints...</span>
+        </div>
+        <div id="step-5" class="step-indicator-row">
+          <div class="step-dot"></div>
+          <span>Compiling live multi-device preview...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       MODALS: Login, Register, Contact, Export, Share, Pitch
+       ==================================================================== -->
+
+  <!-- 1. Login Modal -->
+  <div id="modal-login" class="modal-backdrop">
+    <div class="modal-card glass-panel-elevated">
+      <div class="modal-header">
+        <h3 class="modal-title">Welcome to WebMind AI</h3>
+        <button class="modal-close-btn" onclick="App.closeModal('modal-login')">✕</button>
+      </div>
+      <form onsubmit="App.handleLoginSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" class="form-input" placeholder="barista@velvetroast.com" required value="barista@velvetroast.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-input" placeholder="••••••••••••" required value="demo-password">
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%; margin-top:10px;">Sign In to Studio</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 2. Register Modal -->
+  <div id="modal-register" class="modal-backdrop">
+    <div class="modal-card glass-panel-elevated">
+      <div class="modal-header">
+        <h3 class="modal-title">Create Free Account</h3>
+        <button class="modal-close-btn" onclick="App.closeModal('modal-register')">✕</button>
+      </div>
+      <form onsubmit="App.handleRegisterSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-input" placeholder="Jordan Lee" required value="Jordan Lee">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Work Email</label>
+          <input type="email" class="form-input" placeholder="jordan@innovate.co" required value="jordan@innovate.co">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-input" placeholder="Create strong password" required value="supersecure123">
+        </div>
+        <button type="submit" class="btn btn-gradient" style="width:100%; margin-top:10px;">
+          Start Generating ✨
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Contact Modal -->
+  <div id="modal-contact" class="modal-backdrop">
+    <div class="modal-card glass-panel-elevated">
+      <div class="modal-header">
+        <h3 class="modal-title">Contact WebMind AI</h3>
+        <button class="modal-close-btn" onclick="App.closeModal('modal-contact')">✕</button>
+      </div>
+      <form onsubmit="App.handleContactSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-input" placeholder="Name" required value="Alex Taylor">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="email@domain.com" required value="alex@domain.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" rows="3" placeholder="Tell us how we can help you build faster..." required>Love the photo-centric layout and speech narration features.</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;">Send Inquiry</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. Export Code Modal -->
+  <div id="modal-export" class="modal-backdrop">
+    <div class="modal-card modal-card-lg glass-panel-elevated">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title">Export Production Bundle</h3>
+          <p style="font-size:0.82rem; color:#94a3b8;">Clean, zero-cost, zero-dependency HTML & CSS. Ready to host anywhere.</p>
+        </div>
+        <button class="modal-close-btn" onclick="App.closeModal('modal-export')">✕</button>
+      </div>
+      <div style="margin-bottom:16px;">
+        <textarea id="export-code-preview" class="form-textarea" style="height:240px; font-family:var(--font-mono); font-size:0.8rem;" readonly></textarea>
+      </div>
+      <div style="display:flex; gap:12px; justify-content:flex-end;">
+        <button class="btn btn-glass" onclick="App.copyExportCode()">📋 Copy to Clipboard</button>
+        <button class="btn btn-primary" onclick="App.downloadExportHTML()">💾 Download index.html</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Share Modal -->
+  <div id="modal-share" class="modal-backdrop">
+    <div class="modal-card glass-panel-elevated">
+      <div class="modal-header">
+        <div>
+          <h3 class="modal-title">Share Web Presence</h3>
+          <p style="font-size:0.82rem; color:#94a3b8;">Anyone with this link can view the exact synthesized site.</p>
+        </div>
+        <button class="modal-close-btn" onclick="App.closeModal('modal-share')">✕</button>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Permanent WebMind Link</label>
+        <div style="display:flex; gap:8px;">
+          <input type="text" id="share-link-input" class="form-input" readonly>
+          <button class="btn btn-primary" onclick="App.copyShareLink()">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Pitch Deck & Rubric Evaluation Modal -->
+  <div id="modal-pitch" class="modal-backdrop">
+    <div class="modal-card modal-card-lg glass-panel-elevated">
+      <div class="modal-header">
+        <div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span style="font-size:1.4rem;">🏆</span>
+            <h3 class="modal-title">WebMind AI — Pitch & Judging Rubric</h3>
+          </div>
+          <p style="font-size:0.82rem; color:#94a3b8;">Comprehensive alignment across all six evaluation criteria (100% total weight).</p>
+        </div>
+        <button class="modal-close-btn" onclick="App.closeModal('modal-pitch')">✕</button>
+      </div>
+
+      <div class="rubric-grid">
+        <div class="rubric-card">
+          <h4>
+            <span>Criterion 01: Working MVP</span>
+            <span class="rubric-badge">30% Weight</span>
+          </h4>
+          <p>
+            <strong>Core Live Flow:</strong> Live prompt input synthesizes full semantic web presence featuring high-resolution photography, live image lightbox, category filtering, speech narration, live Python REST backend likes/status, and 1-click code export.
+          </p>
+        </div>
+
+        <div class="rubric-card">
+          <h4>
+            <span>Criterion 02: AI/SaaS Relevance</span>
+            <span class="rubric-badge">20% Weight</span>
+          </h4>
+          <p>
+            <strong>Meaningful AI Value:</strong> Decomposes prompts to dynamically curate relevant high-resolution photo sets, creates non-reader friendly visual cards with audio synthesis, and eliminates unwanted costs/pricing.
+          </p>
+        </div>
+
+        <div class="rubric-card">
+          <h4>
+            <span>Criterion 03: UI/UX Excellence</span>
+            <span class="rubric-badge">15% Weight</span>
+          </h4>
+          <p>
+            <strong>Inclusive Visual Design:</strong> High-contrast glassmorphism, universal visual iconography (☕ 🥐 📍 📞 🕒 ❤️ 🔊), and built-in speech narration for non-readers.
+          </p>
+        </div>
+
+        <div class="rubric-card">
+          <h4>
+            <span>Criterion 04: Market Potential</span>
+            <span class="rubric-badge">15% Weight</span>
+          </h4>
+          <p>
+            <strong>Local Business & Accessibility TAM:</strong> 33M+ local small businesses (cafes, bakeries, florists) need visual-first, frictionless websites that any customer can navigate without reading barriers.
+          </p>
+        </div>
+
+        <div class="rubric-card">
+          <h4>
+            <span>Criterion 05: Innovation</span>
+            <span class="rubric-badge">10% Weight</span>
+          </h4>
+          <p>
+            <strong>Audio-Visual Accessibility + Full-Stack REST:</strong> Integrated Web Speech API audio narration on every card paired with live Python REST backend endpoints (`/api/like`, `/api/status`, `/api/inquiry`).
+          </p>
+        </div>
+
+        <div class="rubric-card">
+          <h4>
+            <span>Criterion 06: Demo & Future Scope</span>
+            <span class="rubric-badge">10% Weight</span>
+          </h4>
+          <p>
+            <strong>Roadmap:</strong> Multilingual audio translation in 30+ languages, real-time voice-driven ordering, and live Instagram feed synchronization.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:20px; display:flex; justify-content:flex-end;">
+        <button class="btn btn-primary" onclick="App.closeModal('modal-pitch')">Close & Return to Studio</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/ai-engine.js"></script>
+  <script src="js/templates.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
